@@ -66,7 +66,7 @@ export default function ExperienceSection() {
 
   return (
     <Section title="Experience">
-      <div className="space-y-6">
+      <div className="space-y-6 w-full">
         {experience.map((experience, index) => (
           <div
             key={index}
@@ -75,12 +75,35 @@ export default function ExperienceSection() {
             <div className="flex flex-col md:flex-row items-start gap-3 md:items-center justify-between w-full text-gray-500">
               <div className="flex flex-col md:flex-row items-start md:items-center gap-3">
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-3">
-                  <img
-                    src={experience.image}
-                    alt={experience.title}
-                    width={25}
-                    height={25}
-                  />
+                  {experience.company === "Byte Labby" ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-building2 lucide-building-2 size-5"
+                    >
+                      <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                      <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                      <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                      <path d="M10 6h4"></path>
+                      <path d="M10 10h4"></path>
+                      <path d="M10 14h4"></path>
+                      <path d="M10 18h4"></path>
+                    </svg>
+                  ) : (
+                    <img
+                      src={experience.image}
+                      alt={experience.title}
+                      width={25}
+                      height={25}
+                    />
+                  )}
                 </div>
                 <div>
                   <h3 className="text-base font-medium text-gray-800">
@@ -93,11 +116,11 @@ export default function ExperienceSection() {
                 {experience.start} - {experience.end}
               </div>
             </div>
-            <ul className="list-disc px-5 mt-6 text-gray-500 space-y-2">
+            {/* <ul className="list-disc px-5 mt-6 text-gray-500 space-y-2">
               {experience.description.map((description) => (
                 <li key={description}>{description}</li>
               ))}
-            </ul>
+            </ul> */}
           </div>
         ))}
       </div>
