@@ -134,10 +134,13 @@ export default function HeroSection() {
       </h2>
       <p className="text-2xl md:text-3xl mt-6">Senior Frontend Developer</p>
       <div className="mt-6 flex flex-row flex-wrap justify-center gap-4 sm:justify-start">
-        {/* <button className="border border-gray-400 hover:bg-gray-100/70 px-6 py-2.5 rounded-full">
+        <a
+          href="#getInTouch"
+          className="border border-gray-400 hover:bg-gray-100/70 px-6 py-2.5 rounded-full"
+        >
           Get in touch
           <ArrowRightIcon className="group-hover:translate-x-0.5 transition ml-1 size-4 inline-flex" />
-        </button> */}
+        </a>
         <a
           href="/cv/Rakesh Shriwas CV.pdf"
           target="_blank"
