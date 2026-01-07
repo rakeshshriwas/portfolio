@@ -14,11 +14,11 @@ export default function App() {
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
   return (
-    <main className="dark:bg-black max-md:px-4">
+    <main className="dark:bg-black max-md:px-4 relative">
       <ThemeButton
         theme={theme}
         setTheme={setTheme}
-        position={"absolute top-16 right-16"}
+        position={"absolute top-4 right-4"}
       />
 
       <Toaster />
