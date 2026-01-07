@@ -37,10 +37,10 @@ export default function ContactSection() {
         className="w-full border border-gray-200 p-6 rounded-xl"
         id="getInTouch"
       >
-        <p className="text-muted-foreground mt-3 text-sm text-center mb-10">
+        <p className="text-muted-foreground mt-3 text-sm text-center mb-10 dark:text-white">
           Please contact me directly at{" "}
           <a
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 underline-offset-4 hover:underline text-muted-foreground hover:text-foreground h-fit p-0 font-medium underline transition-colors"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 underline-offset-4 hover:underline text-muted-foreground hover:text-foreground h-fit p-0 font-medium underline transition-colors "
             href="mailto:rakesh.shriwas88"
           >
             rakesh.shriwas88@gmail.com
@@ -52,39 +52,41 @@ export default function ContactSection() {
           onSubmit={onsubmit}
         >
           <div>
-            <p className="mb-2 text-sm font-medium">Your Name</p>
-            <div className="flex pl-3 rounded-lg border border-gray-300 dark:border-gray-600">
+            <p className="mb-2 text-sm font-medium dark:text-white">
+              Your Name
+            </p>
+            <div className="flex pl-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:text-white">
               <User className="mt-2 pt-1" />
               <input
                 type="text"
                 placeholder="Your name"
-                className="w-full p-3 text-sm outline-none"
+                className="w-full p-3 text-sm outline-none dark:text-white"
                 name="name"
                 required
               />
             </div>
           </div>
           <div>
-            <p className="mb-2 text-sm font-medium">Email id</p>
-            <div className="flex pl-3 rounded-lg border border-gray-300 dark:border-gray-600">
+            <p className="mb-2 text-sm font-medium dark:text-white">Email id</p>
+            <div className="flex pl-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:text-white">
               <Mail className="mt-2 pt-1" />
               <input
                 type="text"
                 placeholder="hello@gmail.com"
-                className="w-full p-3 text-sm outline-none"
+                className="w-full p-3 text-sm outline-none dark:text-white"
                 name="email"
                 required
               />
             </div>
           </div>
           <div className="sm:col-span-2">
-            <p className="mb-2 text-sm font-medium">Message</p>
+            <p className="mb-2 text-sm font-medium dark:text-white">Message</p>
             <textarea
               // type="text"
               placeholder="Hello! What's up?"
               name="message"
               rows={8}
-              className="w-full p-3 text-sm outline-none rounded-lg border border-gray-300 dark:border-gray-600"
+              className="w-full p-3 text-sm outline-none rounded-lg border border-gray-300 dark:border-gray-600 dark:text-white"
               required
             ></textarea>
           </div>

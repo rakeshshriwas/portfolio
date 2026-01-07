@@ -4,7 +4,7 @@ export default function AboutSection() {
   return (
     <Section title="About Me">
       <div className="text-sm/6.5">
-        <p>
+        <p className="dark:text-white">
           I’m Rakesh Shriwas, Senior Frontend Developer with 8+ years of
           experience, including Angular, ReactJs, Javascript and Typescript,
           specializing in building scalable and user-friendly web applications.

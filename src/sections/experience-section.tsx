@@ -106,13 +106,13 @@ export default function ExperienceSection() {
                   )}
                 </div>
                 <div>
-                  <h3 className="text-base font-medium text-gray-800">
+                  <h3 className="text-base font-medium text-gray-800 dark:text-white">
                     {experience.title}
                   </h3>
-                  <div>{experience.company}</div>
+                  <div className="dark:text-white">{experience.company}</div>
                 </div>
               </div>
-              <div>
+              <div className="dark:text-white">
                 {experience.start} - {experience.end}
               </div>
             </div>

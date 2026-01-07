@@ -43,13 +43,13 @@ export default function EducationSection() {
                   />
                 </div>
                 <div>
-                  <h3 className="text-base font-medium text-gray-800">
+                  <h3 className="text-base font-medium text-gray-800 dark:text-white">
                     {education.degree}
                   </h3>
-                  <div>{education.college}</div>
+                  <div className="dark:text-white">{education.college}</div>
                 </div>
               </div>
-              <div>
+              <div className="dark:text-white">
                 {education.start} - {education.end}
               </div>
             </div>

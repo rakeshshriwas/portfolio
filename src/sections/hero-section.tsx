@@ -1,6 +1,9 @@
 import { Download, ArrowRightIcon } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
 
 export default function HeroSection() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <main className="flex flex-col items-center pt-32 max-md:px-4">
       <svg
@@ -103,15 +106,42 @@ export default function HeroSection() {
         </defs>
       </svg>
 
-      <img
-        src="/assets/profile-image.png"
-        alt="Profile Image"
-        className="size-36 rounded-full"
-        width={144}
-        height={144}
-      />
+      <motion.div
+        initial={
+          prefersReducedMotion ? { opacity: 1 } : { opacity: 0, scale: 0 }
+        }
+        animate={
+          prefersReducedMotion ? { opacity: 1 } : { opacity: 1, scale: 1 }
+        }
+        transition={
+          prefersReducedMotion
+            ? { duration: 0 }
+            : { type: "tween", duration: 0.2 }
+        }
+      >
+        <img
+          src="/assets/profile-image.png"
+          alt="Profile Image"
+          className="size-36 rounded-full object-cover shadow-xl shadow-indigo-400/40 ring-2 ring-indigo-400 grayscale transition-all duration-300 hover:scale-105 hover:grayscale-0"
+          width={144}
+          height={144}
+        />
+      </motion.div>
 
-      <div className="flex flex-col items-center gap-5 text-center mt-6">
+      <motion.div
+        initial={
+          prefersReducedMotion ? { opacity: 1 } : { opacity: 0, scale: 0 }
+        }
+        animate={
+          prefersReducedMotion ? { opacity: 1 } : { opacity: 1, scale: 1 }
+        }
+        transition={
+          prefersReducedMotion
+            ? { duration: 0 }
+            : { type: "tween", duration: 0.2 }
+        }
+        className="flex flex-col items-center gap-5 text-center mt-6"
+      >
         <a
           className="bg-background/60 hover:bg-background/80 focus-visible:ring-primary flex items-center gap-2 rounded-full border px-3 py-1 backdrop-blur transition-colors focus-visible:outline-none focus-visible:ring-2 mt-3"
           href="#contact"
@@ -120,23 +150,39 @@ export default function HeroSection() {
             <span className="absolute flex size-full animate-ping rounded-full bg-green-400 opacity-75"></span>
             <span className="relative flex size-2 rounded-full bg-green-400"></span>
           </span>
-          <span className="text-sm">Available for work!</span>
+          <span className="text-sm dark:text-white">Available for work!</span>
         </a>
         <p
-          className="text-muted-foreground mt-2 text-xs"
+          className="text-muted-foreground mt-2 text-xs dark:text-white"
           style={{ opacity: 1, transform: "none" }}
         >
           Currently in Indore — open to relocate
         </p>
-      </div>
-      <h2 className="text-4xl md:text-6xl font-semibold mt-6">
+      </motion.div>
+      <motion.h1
+        initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: prefersReducedMotion ? 0 : 0 }}
+        className="text-4xl md:text-6xl font-semibold mt-6 dark:text-white"
+      >
         Hi I'm Rakesh Shriwas
-      </h2>
-      <p className="text-2xl md:text-3xl mt-6">Senior Frontend Developer</p>
-      <div className="mt-6 flex flex-row flex-wrap justify-center gap-4 sm:justify-start">
+      </motion.h1>
+      <motion.p
+        initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: prefersReducedMotion ? 0 : 0 }}
+        transition={prefersReducedMotion ? { duration: 0 } : { delay: 0.1 }}
+        className="text-2xl md:text-3xl mt-6 dark:text-white"
+      >
+        Senior Frontend Developer
+      </motion.p>
+      <motion.div
+        initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: prefersReducedMotion ? 0 : 0 }}
+        transition={prefersReducedMotion ? { duration: 0 } : { delay: 0.1 }}
+        className="mt-6 flex flex-row flex-wrap justify-center gap-4 sm:justify-start"
+      >
         <a
           href="#getInTouch"
-          className="border border-gray-400 hover:bg-gray-100/70 px-6 py-2.5 rounded-full"
+          className="border border-gray-400 hover:bg-gray-100/70 px-6 py-2.5 rounded-full dark:text-white"
         >
           Get in touch
           <ArrowRightIcon className="group-hover:translate-x-0.5 transition ml-1 size-4 inline-flex" />
@@ -149,12 +195,17 @@ export default function HeroSection() {
           Download CV
           <Download className="group-hover:translate-x-0.5 transition ml-1 size-4 inline-flex" />
         </a>
-      </div>
-      <div className="mt-10 flex flex-row flex-wrap justify-center gap-4 sm:justify-start">
+      </motion.div>
+      <motion.div
+        initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: prefersReducedMotion ? 0 : 0 }}
+        transition={prefersReducedMotion ? { duration: 0 } : { delay: 0.1 }}
+        className="mt-10 flex flex-row flex-wrap justify-center gap-4 sm:justify-start"
+      >
         <a
           href="https://www.linkedin.com/in/rakeshshriwas/"
           target="_blank"
-          className="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input hover:bg-muted/80 h-11 w-11"
+          className="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input hover:bg-muted/80 h-11 w-11 dark:text-white"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -188,7 +239,7 @@ export default function HeroSection() {
         <a
           href="https://github.com/rakeshshriwas"
           target="_blank"
-          className="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input hover:bg-muted/80 h-11 w-11"
+          className="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input hover:bg-muted/80 h-11 w-11 dark:text-white"
         >
           <svg
             stroke="currentColor"
@@ -207,7 +258,7 @@ export default function HeroSection() {
         <a
           href="https://codepen.io/rakeshshriwas"
           target="_blank"
-          className="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input hover:bg-muted/80 h-11 w-11"
+          className="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input hover:bg-muted/80 h-11 w-11 dark:text-white"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -228,7 +279,7 @@ export default function HeroSection() {
             <line x1="12" x2="12" y1="2" y2="8.5" />
           </svg>
         </a>
-      </div>
+      </motion.div>
     </main>
   );
 }
